@@ -16,6 +16,14 @@ LCD1602A 16x2 I2Cを使用して、算数ゲームを作成します。
 | 2    | LCD制御    | SMBus      |
 | 3    | ボタン制御 | gpiozero   |
 
+### 仕様
+
+| 画面     | ボタン1                                | ボタン2    |
+| :------- | :------------------------------------- | :--------- |
+| メニュー | 足し算、引き算の選択                   | 決定       |
+| 足し算   | 次の問題を表示、11回目でメニューへ戻る | 答えを表示 |
+| 引き算   | 次の問題を表示、11回目でメニューへ戻る | 答えを表示 |
+
 ### 完成イメージ
 
 |                                                                        メニュー                                                                         |                                                                         足し算                                                                          |                                                                         引き算                                                                          |
@@ -62,11 +70,15 @@ LCD1602A 16x2 I2Cを使用して、算数ゲームを作成します。
 ```hands_on.sh
 ~$ git clone https://github.com/nsuhara/raspi-lcdgame.git -b master
 ~$ cd raspi-lcdgame
+
 ~$ python -m venv .venv
 ~$ source .venv/bin/activate
 ~$ pip install -r requirements.txt
 ~$ source config
+
 ~$ python app/main.py
+
+~$ Control Key + C
 ```
 
 ## アプリ構成
